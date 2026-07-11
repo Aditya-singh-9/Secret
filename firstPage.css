@@ -26,22 +26,31 @@ body.hovered {
     filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 0.2));
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
+
 .btn{
     position: absolute;
     top: calc(100% - 10rem);
-    min-width: 120px;
-    padding: 0.75rem 1rem;
-    font-size: 1.25rem;
+    min-width: 160px;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
     outline: none;
     border: none;
-    background-color: #455566;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(255, 118, 148, 0.4);
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     color: #fff;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    letter-spacing: 0.5px;
 }
 
+.btn:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 118, 148, 0.6);
+}
 
 .btn:hover span {
     display:none
@@ -52,11 +61,48 @@ body.hovered {
 }
 
 .watermark {
-    opacity: 0.5;
-    color: rgb(238, 203, 203);
-    position: fixed;
-    top: 95%;
-    left: 47%;
+    position: fixed !important;
+    bottom: 20px !important;
+    top: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    padding: 8px 20px !important;
+    border-radius: 50px !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif !important;
+    opacity: 1 !important;
+}
+
+.watermark:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.4) !important;
+    border-color: rgba(255, 105, 180, 0.5) !important;
+    transform: translateX(-50%) translateY(-2px) !important;
+}
+
+.watermark a {
+    color: #ff69b4 !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.watermark a:hover {
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.6) !important;
 }
 
 a{
@@ -73,9 +119,11 @@ a{
     }
 
     .watermark {
-        width: 100%;
-        text-align: center;
-        left: 0;
-        top: 95%;
+        bottom: 15px !important;
+        font-size: 0.8rem !important;
+        padding: 6px 16px !important;
+        width: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 }
