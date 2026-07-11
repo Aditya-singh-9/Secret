@@ -212,7 +212,13 @@ body.noo {
         font-size: 1.8rem;
     }
 
+    .buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     .btn-yes, .btn-no {
-        min-width: 100px;
+        width: 100%;
+        min-width: 0;
     }
 }
