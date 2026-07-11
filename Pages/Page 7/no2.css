@@ -1,32 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 * {
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
-	font-family: dubai;
 }
 
-section {
-	position: relative;
+body {
+	width: 100%;
 	min-height: 100vh;
-	background: #000;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-section h2 {
+	background: #000;
+	padding: 2rem;
+	overflow: hidden;
 	color: #fff;
-	font-size: 5em;
-	cursor: default;
+	font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-section h2 span {
-	color: rgb(240, 99, 99);
+.card-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 520px;
+	z-index: 10;
 }
 
-section .btn {
-	margin: 25rem 10rem 0rem 0;
-	font-size: 30px;
+.love-card {
+	background: rgba(255, 255, 255, 0.03);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 28px;
+	padding: 4rem 2.5rem;
+	width: 100%;
+	text-align: center;
+	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+	font-family: 'DM Serif Display', Georgia, serif;
+	font-size: 2.3rem;
+	color: #ffffff;
+	line-height: 1.35;
+	font-weight: 400;
+	margin-bottom: 2rem;
+}
+
+.highlight {
+	color: #ff758c;
+	font-family: inherit;
+	font-weight: inherit;
+}
+
+.button-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.btn-gradient {
+	min-width: 160px;
+	padding: 0.9rem 2.2rem;
+	font-size: 1.15rem;
+	font-weight: 600;
+	outline: none;
+	border: none;
+	background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+	border-radius: 50px;
+	box-shadow: 0 8px 25px rgba(255, 118, 148, 0.45);
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	color: #fff;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	letter-spacing: 0.5px;
+}
+
+.btn-gradient:hover {
+	transform: scale(1.06) translateY(-2px);
+	box-shadow: 0 12px 30px rgba(255, 118, 148, 0.6);
 }
 
 .light {
@@ -37,6 +91,7 @@ section .btn {
 	height: 100%;
 	pointer-events: none;
 	background: radial-gradient(circle at var(--x) var(--y), transparent 10%, rgba(0, 0, 0, 0.95) 20%);
+	z-index: 5;
 }
 
 .watermark {
@@ -45,66 +100,48 @@ section .btn {
 	top: auto !important;
 	left: 50% !important;
 	transform: translateX(-50%) !important;
-	background: rgba(255, 255, 255, 0.15) !important;
+	background: rgba(255, 255, 255, 0.05) !important;
 	backdrop-filter: blur(8px) !important;
 	-webkit-backdrop-filter: blur(8px) !important;
-	border: 1px solid rgba(255, 255, 255, 0.25) !important;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
 	padding: 8px 20px !important;
 	border-radius: 50px !important;
-	font-size: 0.9rem !important;
+	font-size: 0.85rem !important;
 	font-weight: 500 !important;
-	color: rgba(255, 255, 255, 0.95) !important;
+	color: rgba(255, 255, 255, 0.8) !important;
 	letter-spacing: 0.5px !important;
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
 	z-index: 9999 !important;
 	display: flex !important;
 	align-items: center !important;
 	gap: 6px !important;
 	white-space: nowrap !important;
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-	font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif !important;
+	font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
 	opacity: 1 !important;
 }
 
 .watermark:hover {
-	background: rgba(255, 255, 255, 0.25) !important;
-	box-shadow: 0 8px 32px rgba(255, 105, 180, 0.4) !important;
-	border-color: rgba(255, 105, 180, 0.5) !important;
+	background: rgba(255, 255, 255, 0.1) !important;
+	box-shadow: 0 8px 32px rgba(255, 105, 180, 0.25) !important;
+	border-color: rgba(255, 105, 180, 0.3) !important;
 	transform: translateX(-50%) translateY(-2px) !important;
 }
 
-.watermark a {
-	color: #ff69b4 !important;
-	font-weight: 600 !important;
-	text-decoration: none !important;
-	transition: color 0.2s ease !important;
-}
-
-.watermark a:hover {
-	text-shadow: 0 0 8px rgba(255, 105, 180, 0.6) !important;
-}
-
-@media (max-width: 768px) {
-	section h2 {
-		font-size: 2.5em;
-		text-align: center;
+@media (max-width: 576px) {
+	body {
+		padding: 1rem;
 	}
 
-	section .btn {
-		margin: 15rem 0 0 0;
-		font-size: 20px;
+	.love-card {
+		padding: 3rem 1.5rem;
 	}
 
-	section {
-		flex-direction: column;
+	.card-title {
+		font-size: 1.8rem;
 	}
 
-	.watermark {
-		bottom: 15px !important;
-		font-size: 0.8rem !important;
-		padding: 6px 16px !important;
-		width: auto !important;
-		left: 50% !important;
-		transform: translateX(-50%) !important;
+	.btn-gradient {
+		width: 100%;
 	}
 }

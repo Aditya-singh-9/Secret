@@ -16,14 +16,25 @@
 </head>
 
 <body>
-    <div class="container">  
-        <img id="image" src="Pages/Assets/sad.gif" >     
-        <button type="button" class="btn btn-danger" id="hover" onclick = "myFunction()" onmouseover="ChangeImage('hi'); bg();" onmouseout="ResetImage(); resetBG();">
-            <span>Hello &#128532;</span>
-        </button>
+    <div class="card-container">
+        <div class="love-card">
+            <h1 class="card-title">Komal, This Website Is <br>Only For You <span class="heart-emoji">❤️</span></h1>
+            <p class="card-subtitle">I built this little world just to tell you something from my heart...</p>
+            
+            <div class="image-wrapper">
+                <img id="image" src="Pages/Assets/sad.gif" alt="Reaction GIF">     
+            </div>
+            
+            <div class="button-wrapper">
+                <button type="button" class="btn" id="hover" onclick="myFunction()" onmouseover="ChangeImage('hi'); bg();" onmouseout="ResetImage(); resetBG();">
+                    <span>Hello &#128532;</span>
+                </button>
+            </div>
+        </div>
     </div>
+    
     <div class="watermark">
-        Made BY Me for you Komal JI ❣️
+        Made with ❤️ for Komal
     </div>
     
     <script src="firstPage.js"></script>  

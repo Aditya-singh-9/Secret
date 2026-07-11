@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,18 +7,17 @@
 }
 
 body {
-  /* background: #23011c; */
-  /* background-image: linear-gradient(
-    0.25turn,
-    #100716,
-    #1f031b,
-    #1c0101,
-    #250212,
-    #200f02
-  ); */
-  background-color: rgb(24, 22, 22);
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #1b091f 0%, #06020a 100%);
+  background-attachment: fixed;
+  padding: 2rem;
   overflow: hidden;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .circle {
@@ -24,11 +25,11 @@ body {
   bottom: 0;
   width: 20px;
   aspect-ratio: 1/1;
-  background: rgb(248, 248, 248);
-  box-shadow: 0 0 10px rgb(232, 9, 16), 0 0 20px rgb(148, 7, 7),
-    0 0 30px rgb(91, 3, 3), 0 0 40px rgb(68, 2, 10), 0 0 50px rgb(32, 1, 2);
+  background: rgba(255, 118, 148, 0.2);
+  box-shadow: 0 0 10px rgba(255, 71, 126, 0.4), 0 0 20px rgba(255, 71, 126, 0.2);
   border-radius: 50%;
   animation: animate 5s linear forwards;
+  z-index: 1;
 }
 
 @keyframes animate {
@@ -36,63 +37,95 @@ body {
     transform: translateY(-100vh) skew(-5deg);
     opacity: 1;
   }
-
   50% {
     opacity: 1;
   }
-
   100% {
     transform: translateY(0) skew(5deg);
     opacity: 0;
   }
 }
 
-.circle::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 25%;
-  width: 50%;
-  height: 100vh;
-  opacity: 0.5;
-}
-
-h1 {
-  margin: 10rem 0 0;
-  padding-bottom: 3rem;
+.card-container {
   display: flex;
   justify-content: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: whitesmoke;
-  z-index: 1;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  z-index: 10;
 }
 
-.red {
-  color: rgb(233, 71, 71);
-  font-family: cursive;
+.love-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 3rem 2rem;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.card-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2.3rem;
+  color: #ffffff;
+  line-height: 1.25;
+  font-weight: 400;
+  margin-bottom: 2rem;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  margin-top: 7rem;
-  gap: 12rem;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
 }
 
-#yes {
-  width: 150px;
-  height: 200px;
-  font-size: 50px;
-  border-radius: 1rem 3rem 2rem 4rem;
-  z-index: 1;
+.btn-yes {
+  width: 140px;
+  height: 140px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  outline: none;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50% 30% 50% 30%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-#no {
-  width: 200px;
-  height: 150px;
-  font-size: 50px;
-  border-radius: 4rem 2rem 3rem 1rem;
-  z-index: 1;
+.btn-yes:hover {
+  transform: scale(1.08) rotate(5deg);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-no {
+  width: 140px;
+  height: 140px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+  border-radius: 30% 50% 30% 50%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-shadow: 0 8px 25px rgba(255, 118, 148, 0.4);
+}
+
+.btn-no:hover {
+  transform: scale(1.08) rotate(-5deg);
+  box-shadow: 0 12px 30px rgba(255, 118, 148, 0.6);
 }
 
 .watermark {
@@ -101,74 +134,55 @@ h1 {
   top: auto !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   padding: 8px 20px !important;
   border-radius: 50px !important;
-  font-size: 0.9rem !important;
+  font-size: 0.85rem !important;
   font-weight: 500 !important;
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   letter-spacing: 0.5px !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
   z-index: 9999 !important;
   display: flex !important;
   align-items: center !important;
   gap: 6px !important;
   white-space: nowrap !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
   opacity: 1 !important;
 }
 
 .watermark:hover {
-  background: rgba(255, 255, 255, 0.25) !important;
-  box-shadow: 0 8px 32px rgba(255, 105, 180, 0.4) !important;
-  border-color: rgba(255, 105, 180, 0.5) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 32px rgba(255, 105, 180, 0.25) !important;
+  border-color: rgba(255, 105, 180, 0.3) !important;
   transform: translateX(-50%) translateY(-2px) !important;
 }
 
-.watermark a {
-  color: #ff69b4 !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  transition: color 0.2s ease !important;
-}
+@media (max-width: 576px) {
+  body {
+    padding: 1rem;
+  }
 
-.watermark a:hover {
-  text-shadow: 0 0 8px rgba(255, 105, 180, 0.6) !important;
-}
+  .love-card {
+    padding: 2rem 1.5rem;
+  }
 
-@media (max-width: 768px) {
-  h1 {
-    margin: 5rem 0 0;
-    font-size: 1.5rem;
-    padding-bottom: 1rem;
-    text-align: center;
+  .card-title {
+    font-size: 1.8rem;
   }
 
   .buttons {
-    margin-top: 3rem;
-    gap: 2rem;
     flex-direction: column;
-    align-items: center;
+    gap: 1.5rem;
   }
 
-  #yes,
-  #no {
-    width: 120px;
-    height: 80px;
-    font-size: 25px;
+  .btn-yes, .btn-no {
+    width: 100%;
+    height: 60px;
+    border-radius: 50px;
   }
-
-  .watermark {
-    bottom: 15px !important;
-    font-size: 0.8rem !important;
-    padding: 6px 16px !important;
-    width: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
-}
 }

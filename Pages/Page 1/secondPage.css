@@ -1,141 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 body {
+    width: 100%;
     min-height: 100vh;
-    background: #0c192c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #16081c 0%, #050207 100%);
+    background-attachment: fixed;
+    padding: 2rem;
+    overflow-x: hidden;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.container {
-    position: relative;
+.letter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    max-width: 600px;
+    z-index: 10;
 }
 
-h2 {
-    color: antiquewhite;
-}
-
-h3 {
-    padding-bottom: 2rem;
-    color: #203757;
-}
-
-.btn {
-    z-index: 1000;
-}
-
-.hearts {
-    font-size: 100px;
-    ;
-    font-weight: bold;
-    position: fixed;
-    top: -1vh;
-    left: 0;
-    transform: translateY(0%);
-    animation: fall 1s ease-in infinite;
-}
-
-
-@keyframes fall {
-    to {
-        transform: translateY(250vh);
-    }
-}
-
-h1 {
-    margin-top: 2rem;
-    padding: 0 2rem 0;
-    /* font-size: 5rem; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: whitesmoke;
-}
-
-#center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 4rem 0 4rem;
-}
-
-.beauti,
-.gorg,
-.wow {
-    color: transparent;
-    -webkit-text-stroke: 3px darkmagenta;
-    position: relative;
-    font-size: 3rem;
-}
-
-#beauti {
-    padding: 2rem 0 2rem;
-}
-
-#gorg {
+.page-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: #ffffff;
     text-align: center;
-    padding: 2rem 0 2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
 }
 
-#wow {
-    text-align: right;
-    padding: 2rem 0 2rem;
+.page-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
 }
 
-.beauti::before {
-    content: "BEAUTIFUL!!!!!!";
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    overflow: hidden;
-    color: darkmagenta;
-    border-right: 8px solid darkmagenta;
-    animation: slidein infinite 1.5s;
-}
-
-.gorg::before {
-    content: "GORGEOUS!!!!!!";
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    overflow: hidden;
-    color: darkmagenta;
-    border-right: 8px solid darkmagenta;
-    animation: slidein infinite 1.5s;
-    animation-direction: reverse;
-}
-
-.wow::before {
-    content: "WOWWWW!!!!!!";
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    overflow: hidden;
-    color: darkmagenta;
-    border-right: 8px solid darkmagenta;
-    animation: slidein infinite 1.5s;
-}
-
-@keyframes slidein {
-    to {
-        width: 100%;
-        filter: drop-shadow(0 0 25px darkmagenta);
-    }
-}
-
-.beauti:hover::before,
-.gorg:hover::before,
-.wow:hover::before {
+.letter-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
     width: 100%;
-    filter: drop-shadow(0 0 25px darkmagenta);
+    min-height: 250px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.sealed-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.envelope-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 10px rgba(255, 118, 148, 0.3));
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.seal-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+}
+
+.btn-gradient {
+    padding: 0.75rem 1.8rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(255, 118, 148, 0.35);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 118, 148, 0.5);
+}
+
+.revealed-content {
+    width: 100%;
+    text-align: left;
+}
+
+.letter-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: pre-line;
+    border-left: 2px solid rgba(255, 118, 148, 0.5);
+    padding-left: 1.2rem;
+}
+
+.continue-wrapper {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-outline {
+    padding: 0.75rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ff758c;
+    background: transparent;
+    border: 2px solid rgba(255, 118, 148, 0.4);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 118, 148, 0.1);
+    border-color: #ff758c;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 118, 148, 0.15);
+}
+
+.fade-in {
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating Hearts styling */
+.hearts {
+    position: fixed;
+    bottom: -50px;
+    transform: translateY(0);
+    animation: rise 5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 .watermark {
@@ -144,72 +189,49 @@ h1 {
     top: auto !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    background: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 8px 20px !important;
     border-radius: 50px !important;
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
     font-weight: 500 !important;
-    color: rgba(255, 255, 255, 0.95) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
     letter-spacing: 0.5px !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
     z-index: 9999 !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
     white-space: nowrap !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif !important;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
     opacity: 1 !important;
 }
 
 .watermark:hover {
-    background: rgba(255, 255, 255, 0.25) !important;
-    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.4) !important;
-    border-color: rgba(255, 105, 180, 0.5) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.25) !important;
+    border-color: rgba(255, 105, 180, 0.3) !important;
     transform: translateX(-50%) translateY(-2px) !important;
 }
 
-.watermark a {
-    color: #ff69b4 !important;
-    font-weight: 600 !important;
-    text-decoration: none !important;
-    transition: color 0.2s ease !important;
-}
-
-.watermark a:hover {
-    text-shadow: 0 0 8px rgba(255, 105, 180, 0.6) !important;
-}
-
-a {
-    text-decoration: none;
-    color: rgb(238, 203, 203);
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-        margin-top: 1rem;
+@media (max-width: 576px) {
+    body {
+        padding: 1rem;
     }
 
-    .beauti,
-    .gorg,
-    .wow {
+    .page-title {
         font-size: 2rem;
     }
 
-    .hearts {
-        font-size: 50px;
+    .letter-card {
+        padding: 1.5rem;
     }
 
-    .watermark {
-        bottom: 15px !important;
-        font-size: 0.8rem !important;
-        padding: 6px 16px !important;
-        width: auto !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+    .letter-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 }

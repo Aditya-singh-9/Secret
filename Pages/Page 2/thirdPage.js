@@ -1,14 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to show the clickable button and hide the loading button
+  // Function to show the clickable button and hide the loading state
   function showClickableButton() {
-    // Show the clickable button
-    document.getElementById("enable").style.display = "inline";
-
-    // Hide the loading button
-    document.getElementById("disable").style.display = "none";
+    document.getElementById("loader-content").style.display = "none";
+    document.getElementById("ready-content").style.display = "block";
+    document.getElementById("ready-content").classList.add("fade-in");
   }
 
-  // Function to navigate to the second page
+  // Function to navigate to the romance page
   function navigateToSecondPage() {
     window.location.href = "../Page 3/forthPage.html";
   }
